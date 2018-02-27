@@ -1,3 +1,13 @@
+
+/*
+ * Adnan Rahin
+ * Department of Computer Science,
+ * Queens College, CUNY
+ * New York.
+ * 
+ * Instructor: Michael Fried
+ */
+
 package project_101;
 
 public class LinkedList<E> implements Stack<E>, List<E> {
