@@ -8,7 +8,6 @@ public class HW2 {
 	static Set<String> engset = new HashSet<>();
 	static Set<String> frenchset = new HashSet<>();
 	static Map<String, Integer> cybertron = new HashMap<>();
-	//static Map<String, String> decepticon = new HashMap<>();
 
 	// Prints a list of words that appear in both files.
 
@@ -100,14 +99,16 @@ public class HW2 {
 
 	public static void main(String[] args) {
 		
-		  /*String english =
+		  String english =
 		  "/home/adnanrahin/eclipse-workspace/Data_structure_Class/src/project_102/english_words.txt";
 		  String french =
 		  "/home/adnanrahin/eclipse-workspace/Data_structure_Class/src/project_102/french_words.txt";
-		  intersection(english, french); frequentWords(english, 2); anagrams(english);*/
+		  intersection(english, french);
+		  frequentWords(english, 2); 
+		  anagrams(english);
 		 
-		intersection("english_words.txt", "french_words.txt");
+		/*intersection("english_words.txt", "french_words.txt");
 		frequentWords("english_words.txt", 2);
-		anagrams("english_words.txt");
+		anagrams("english_words.txt");*/
 	}
 }

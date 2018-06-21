@@ -1,0 +1,29 @@
+You have been given the following code: 
+HW3.java 
+RandomInts.java (this is not part of the homework, it's just an example of how to generate random integers) 
+
+The quicksort method in HW3.java is not very optimized. In this assignment, you will be making two improvements to the code. You will also be measuring runtimes and counting comparisons. You should submit two files:
+HW3.java (code)
+hw3.txt (runtimes, comparisons)
+Sample hw3.txt file (replace the blank lines with your answers) 
+This homework is worth only 70 points instead of 100 (40 points for the code, 30 points for hw3.txt).
+Measuring runtime
+Algorithms may perform well on some inputs and poorly on other inputs, so it is important to test algorithms on a variety of inputs. 
+We will test quicksort on random arrays, already-sorted arrays, and all-zero arrays, each with 100,000 elements. To improve accuracy, we will take the average of 100 tests.
+Before you make any changes to the code, run the program to measure the runtime for each type of input. Record the 3 runtimes in HW3.txt. If the stack overflows, don't worry about it. Check which test(s) caused it to overflow and write "slow" as the result, then comment out the test so you can do the other tests.
+In the partition method, uncomment ++numComparisons. Now the program will count the number of comparisons. Run the program again and record the number of comparisons for sorting a random array in HW3.txt. Record the value of nlog2n (use a calculator). Which number is larger? Is it just a little larger, or much larger?
+Comment-out ++numComparisons before you start the next part of the homework (to avoid slowing down the runtime).
+Insertion sort for small subarrays
+Although insertion sort is O(n2) and quicksort is O(nlogn), insertion sort is faster for small arrays.
+Modify quicksort so that each time you call quicksort recursively, check the size of the subarray (the the portion of the array currently being sorted). If the size is smaller than the threshold, sort it with insertion sort instead of quicksort (you have been given an insertionsort method). Test 4 different thresholds: 8, 32, 64, 512.
+For each threshold, record the runtime for sorting a random array. 
+Which threshold do you think is the best choice? If you think multiple thresholds are equally good, then say so.
+Set the threshold to what you think is the best choice before you start the next part of the homework.
+Random pivot
+If the pivot is chosen deterministically, certain inputs will always have the worst-case runtime, because every element will end up on the same side of the pivot. One way to fix this is to choose a random pivot.
+Modify the partition method so that it uses a random pivot. At the beginning of the method, choose a random element in the range a[low..high] to swap with a[high], before choosing a[high] as the pivot (because in Lomuto partitioning, the pivot must be the rightmost element).
+Measure the runtime again for all 3 types of input. If your code is correct, one of the previously "slow" runtimes should be faster. One of the tests still cause the stack to overflow, so write "slow" as the result (to fix it you'd have to use a different partitioning scheme, but this is not required for the homework).
+Duplicate elements
+You do not have to do anything here. It's only for your information. 
+
+Some partitioning schemes perform poorly when there are many duplicate elements. When implementing an algorithm, it is important to consider all possible situations. Quicksort with Hoare partitioning is O(nlogn) in the case where all elements are equal. Another option is to use Dijkstra's 3-way partitioning, which is O(n) in the case where all elements are equal. This method partitions the array into 3 sections, which are less than, equal to, and greater than the pivot.

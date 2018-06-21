@@ -84,10 +84,12 @@ public class LinkedList<E> implements Stack<E>, List<E> {
 		while (myNode != null) {
 			counter++;
 			if (index == 0) {
+				temp = head.data;
 				head = myNode.next;
 				return temp;
 			}
 			if (counter == index) {
+				temp = myNode.next.data;
 				myNode.next = myNode.next.next;
 				break;
 			}

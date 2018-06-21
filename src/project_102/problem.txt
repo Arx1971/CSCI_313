@@ -1,0 +1,31 @@
+Three of the methods in HW2.java are incomplete. Write the code so it works correctly. HW2.java is the only file you need to submit. 
+
+The purpose of this assignment is to learn how to use HashSet and HashMap from the JCF. You don't need to write the HashSet and HashMap classes. Do not change the method headers. Each method should print the output to the console. They don't need to return anything. 
+
+public static void intersection(String filename1, String filename2) 
+Reads the two files and prints every word that occurs at least once in both files (the order is not important). 
+The runtime must be O(n) where n is the total number of words in both files. 
+Do not sort the words because it is too slow. Use a HashSet to store the words. 
+You may assume that a string can be inserted into a hash table in O(1) time. 
+
+public static void frequentWords(String filename, int k) 
+Reads the file and prints every word that occurs at least k times (the order is not important). 
+Print the word followed by the number of occurrences in parentheses, as in the sample output. 
+The runtime must be O(n) where n is the total number of words in the file. 
+Do not sort the words. Use a HashMap to count the occurrences of each word (the key is the word, the value is the number of occurrences). 
+If the key is already in the map, update its value (using the get and put methods), otherwise add a new entry to the map. 
+Then iterate through the map to find the frequent words. See UsingSetsMaps for an example of how use a for-each loop with a map. 
+
+public static void anagrams(String filename) 
+Reads the file and prints all sets of anagrams, one set per line (the order is not important). Only print sets that contain 2 or more words. 
+In a set of anagrams, you can rearrange the letters of one word to form any other word, for example [now, own, won]. 
+You have been given a sortString method that takes a string as a parameter, sorts the characters alphabetically, and returns the result. 
+If two strings are equal to each other after sorting both strings, they are anagrams. 
+There is no runtime requirement, so you may solve it however you want, but I think the easiest solution is to use a map (the key is the sorted word, the value is either a list or a set of all words that are anagrams with the sorted word). 
+
+For example, suppose you create a map like this: 
+Map<String, Set<String>> map = new HashMap<>(); 
+Then you can write 
+map.put("now", new HashSet<String>()); 
+to create a set to store the anagrams of "now". 
+If you want to add a string to this set, first call the map's get method (which returns the set), then call the set's add method.

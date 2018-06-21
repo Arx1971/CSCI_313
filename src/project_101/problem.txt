@@ -1,0 +1,36 @@
+The LinkedList class implements both the List interface and the Stack interface, but several methods (listed below) are missing bodies. Write the code so it works correctly. LinkedList.java is the only file you need to submit. 
+
+Do not change the interfaces. Do not change the public method headers. Do not rename the LinkedList class. 
+I will test your code with the interfaces and HW1.java file that I gave you, so if you change the method headers, it will not work when I test it. 
+The given code uses a dummy node. If you prefer not to use a dummy node, you may change it. 
+
+None of your methods should print anything to the console. All of the printing happens in HW1.java. 
+Any method that adds or removes an element should modify size appropriately. 
+
+public E remove(int index) 
+Removes and returns the element at the specified index, 
+or throws an IndexOutOfBoundsException if the index is out of range. 
+Like an array, the first element (after the dummy node) should be at index 0. 
+If the node you removed is the last node, don't forget to update last. 
+
+public void push(E e) 
+Adds element e to the top of the stack. 
+It's your choice which side of the linked list is the "top", but push and pop must happen on the same side. 
+You'll probably want the top to be at the beginning of the list, because there's no efficient way to remove the last node of a singly-linked list.
+
+public E pop() 
+Removes and returns the top element of the stack, or returns null if the stack is empty. 
+
+Note: If you push onto an empty stack, or pop the last node from the stack, don't forget to update last. 
+
+public E top() 
+Returns but does not remove the top element of the stack, or returns null if the stack is empty. 
+
+public void reverse() 
+Reverses the order of all the elements of the stack, for example if the stack looked like [1, 2, 3], it should be changed to [3, 2, 1]. 
+There are several ways to do this, but probably the easiest way is to move the elements to another list or stack, then move them back. 
+
+public String toString() 
+Returns a String representation of the linked list. 
+The exact format is your choice, but the String should include every element (not including the dummy node). 
+Examples of acceptable formats are "[1, 2, 3]", "[1,2,3]", "[ 1 2 3 ]", "1 2 3".

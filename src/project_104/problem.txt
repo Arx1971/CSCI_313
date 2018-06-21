@@ -1,0 +1,43 @@
+Homework 4: depth-first search
+You have been given the following code: 
+HW4.java 
+Sample output (your maze5 path does not have to be the same as mine) 
+
+This code contains a method 
+boolean winnable(int maze[][]) 
+that returns true if the maze is winnable, starting in the top-left and ending in the bottom-right (the ending location depends on the size of the maze). 
+
+It also contains a helper method 
+boolean winnable(int maze[][], int startRow, int startCol, boolean[][] marked) 
+that returns true if it is possible to solve the maze, starting in the location maze[startRow][startCol] and ending in the bottom-right. 
+
+If the maze is winnable, modify the maze array by filling in the winning path with 2s. Otherwise, the maze should not be modified. 
+It does not have to be the shortest path. Any path is fine. 
+
+Write the missing code so it works correctly.
+The rules of the maze
+Each maze is represented by a 2D int array.
+You can move in 4 directions: up, down, left, or right. You cannot move diagonally.
+1 represents a wall. 0 represents empty space. You cannot move through a wall.
+The maze is winnable if there exists a sequence of moves that brings you from the starting location to the ending location.
+Hints
+Although the maze is not represented by a graph, we can still use depth-first search. Imagine that each 0 in the maze is a vertex, and each pair of adjacent 0s is connected by an edge (it's not necessary to actually construct the graph). 
+
+To review, here is the basic depth-first search algorithm: 
+void dfs(int v, boolean[] marked) {
+   Mark vertex v as visited.
+   Call dfs recursively on each neighbor of v that hasn't been visited yet.
+}
+ 
+
+If we modify it slightly, we can apply depth-first search to the maze problem: 
+boolean winnable(int maze[][], int startRow, int startCol, boolean[][] marked) {
+   If you're already at the ending location, return true.
+   Mark the current location as visited (use the marked array).
+   Call winnable recursively on each adjacent location* that hasn't been visited yet.
+   If you can win from any adjacent location, return true*.  Otherwise return false.
+}
+ 
+
+* Do not visit invalid locations, i.e. locations that contain walls or locations outside the maze. 
+* If you return true, you must be on the winning path, so you can fill in the entry with 2 before returning true.

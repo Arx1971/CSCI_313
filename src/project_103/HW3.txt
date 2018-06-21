@@ -1,0 +1,40 @@
+***Original code, before making changes***
+
+Average runtime in seconds (random arrays): ____0.01086______
+Average runtime in seconds (already-sorted arrays): _____Slow_____
+Average runtime in seconds (all-zero arrays): _____Slow_____
+
+(++numComparisons should be uncommented at this point)
+
+Average number of comparisons (random arrays): _____2,015,442.97_____
+n = 100000
+nlogn = __1,660,964__
+Compared to nlogn, the number of comparisons is _____Much More_____ (much more? slightly more? slightly less?)
+
+(++numComparisons should be commented-out at this point)
+
+
+***Modify quicksort to use insertion sort for small subarrays***
+
+Threshold = 8
+Average runtime in seconds (random arrays): _____0.00878_____
+
+Threshold = 32
+Average runtime in seconds (random arrays): _____0.00795_____
+
+Threshold = 64
+Average runtime in seconds (random arrays): _____0.00734_____
+
+Threshold = 512
+Average runtime in seconds (random arrays): _____0.00989_____
+
+The best threshold(s) seems to be _____64_____
+
+(the threshold should be set to what you think is the best choice)
+
+
+***Modify partition to choose a random pivot***
+
+Average runtime in seconds (random arrays): ____0.00845______
+Average runtime in seconds (already-sorted arrays): _____0.00298_____
+Average runtime in seconds (all-zero arrays): _____Still Slow_____
